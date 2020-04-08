@@ -15,7 +15,6 @@ return (
           <div className="col s12 center-align">
             <h4>
               <b>Hey there,</b> 
-            
             </h4>
             <button
               style={{
@@ -35,14 +34,11 @@ return (
     );
   }
 }
-
 Dashboard.propTypes = {
   logoutUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired
 };
-
 const mapStateToProps = state => ({
   auth: state.auth
 });
-
 export default connect(mapStateToProps,{ logoutUser })(Dashboard);

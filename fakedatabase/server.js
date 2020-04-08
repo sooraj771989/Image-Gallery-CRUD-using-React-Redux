@@ -135,7 +135,7 @@ server.get(
     });
   }
 );
-server.get("/auth/posts",
+server.get("/auth/allposts",
   (req, res) => {
     res.json(postdb.posts);
     // console.log( res.json(router));

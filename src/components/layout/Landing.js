@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
 class Landing extends Component {
   render() {
     return (
@@ -10,7 +9,6 @@ class Landing extends Component {
             <h4>
               Welcome to Image Gallery
             </h4>
-            
             <div className="col s6">
               <Link
                 to="/register"
@@ -43,5 +41,4 @@ class Landing extends Component {
     );
   }
 }
-
 export default Landing;
