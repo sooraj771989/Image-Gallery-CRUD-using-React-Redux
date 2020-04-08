@@ -4,7 +4,7 @@ Go to project root folder  and 'npm i' to install all the packages
 
 ## Run Server 
 
-### `json-server --watch db.json`
+### `npm run server`
 
 ## Run Application  
 
