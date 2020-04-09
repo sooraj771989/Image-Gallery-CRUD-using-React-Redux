@@ -12,28 +12,35 @@ class EditPost extends React.Component {
     const id = this.props.article.id;
     const title = this.state.title ? this.state.title : this.props.article.title;
     const content = this.state.content ? this.state.content : this.props.article.content;
-    const article = {id: id, title: title, content: content}
+    const author = this.state.author ? this.state.author : this.props.article.author;
+    const article = {id: id, title: title, content: content, author: author}
     this.props.updateArticle(article);
   };
 
   handleCancel = () => {
-    this.props.history.push(`/articles/${this.props.article.id}`);
+    this.props.history.push(`/post/${this.props.article.id}`);
   }
 
   render() {
     return (
       <div className="container py-16 mx-auto padding-top-div">
           <div className=" w-full lg:w-6/12 mx-auto">  
-        <h1 className="text-center font-bold text-2xl">Edit Image {this.props.article.title}</h1>
+        <h1 className="text-center font-bold text-2xl mb-6">Edit Image</h1>
         <form onSubmit={this.handleSubmit}>
-          <div className="form-group">
+          <div className="form-group mb-4">
             <label>Title</label>
             <input type="text" name="title" defaultValue={this.props.article.title} onChange={this.handleChange} className="form-control" />
           </div>
-          <div className="form-group">
+          <div className="form-group mb-4">
             <label>Content</label>
-            <textarea name="content" rows="5" defaultValue={this.props.article.content} onChange={this.handleChange} className="form-control" />
+            <textarea name="content" rows="10" defaultValue={this.props.article.content} onChange={this.handleChange} className="form-control" />
           </div>
+
+          <div className="form-group mb-4">
+            <label>Author</label>
+            <input type="text" name="author" defaultValue={this.props.article.author} onChange={this.handleChange} className="form-control" />
+          </div>
+
           <div className="btn-group">
             <button type="submit" className="mr-4 btn btn-dark">Update</button>
             <button type="button" onClick={this.handleCancel} className="btn btn-secondary">Cancel</button>

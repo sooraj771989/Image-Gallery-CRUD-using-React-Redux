@@ -12,13 +12,16 @@ class InfoPost extends Component {
     const article = this.props.article;
     return (
       <div className="container py-16 mx-auto padding-top-div">
-      <div className="w-full lg:w-6/12 mx-auto"> 
-      <div className="justify-center flex flex-col">
-        <img className="post-edit-image" src={article.img}></img>
+      <div className="justify-center flex flex-col mx-auto w-full lg:w-6/12 mx-auto"> 
+ 
+        <div>
+          <img className="post-edit-image" src={article.img}></img>
+          </div>
         <h2 className="font-bold mt-6">{article.title}</h2>
         <p className="text-gray-600 mt-4">{article.content}</p>
+        <p className="text-gray-600 mt-4"><span className="text-black font-bold">Uploaded By: </span> {article.author}</p>
         <div className="btn-group mt-4 mb-4">
-          <Link to={{ pathname: `/articles/${article.id}/edit`, state: { article: article } }} className='btn btn-info mr-4 '>  
+          <Link to={{ pathname: `/post/${article.id}/edit`, state: { article: article } }} className='btn btn-info mr-4 '>  
             Edit
           </Link>
           <button className="btn btn-danger mr-4 " type="button" onClick={() => this.props.deleteArticle(article.id)}>          
@@ -27,7 +30,7 @@ class InfoPost extends Component {
           <Link to="/editdashboard" className="btn btn-primary mr-4 ">Close</Link>                                                 
         </div>
         </div>
-      </div>
+    
       </div>
     )
   }

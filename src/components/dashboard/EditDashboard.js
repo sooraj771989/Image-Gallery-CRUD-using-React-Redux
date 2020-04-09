@@ -14,16 +14,15 @@ class EditDashboard extends Component {
             return (
               <React.Fragment>
               <div className="w-full lg:w-4/12 mb-10 px-4" key={article.id}>                              
-              <div className="relative"  >
-                    <img src={article.img} className="post-images" />
-                  <div className="absolute bottom-0 left-0 hidden p-2 mb-5 ml-5 text-sm text-white bg-white caption md:block">
-                    <p className="text-black">
-                      {article.title}   </p>
+              <div className="relative post-image-div"  >
+                    <img src={article.img} className="dashboard-post-image post-images" />
+                  <div className="absolute middle bottom-0 left-0 hidden p-2 mb-5 ml-5 text-sm caption md:block">
+                    <p className="text-gray-200">
+                      {article.author}   </p>
                   </div>
                 </div>
-                <p className="text-sm mt-2 text-gray-600">{article.content} </p>
                 <div className="btn-group mt-4">
-              <Link to={`/articles/${article.id}`}  className='btn btn-info'>  
+              <Link to={`/post/${article.id}`}  className='btn btn-info'>  
                 Edit
               </Link>
             </div>

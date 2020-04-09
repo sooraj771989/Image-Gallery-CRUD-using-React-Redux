@@ -1,4 +1,5 @@
-a:hover{
+a:hover,
+.close-icon:hover{
     cursor:pointer;
 }
 a:focus{
@@ -10,7 +11,8 @@ a:focus{
 }
 
 .post-edit-image{
-    height: 350px;
+    height: 250px;
+    width: 250px;
 }
 
 .dialog-image{
@@ -37,4 +39,31 @@ a:focus{
 body,
 .App{
     margin: 0;
+}
+
+.dashboard-post-image{
+    opacity: 1;
+    display: block;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    background-color: #000;
+}
+
+.middle{
+    transition: .5s ease;
+    opacity: 0;
+}
+
+.post-image-div:hover .dashboard-post-image{
+    opacity: 0.8;
+}
+
+.post-image-div:hover .middle{
+    opacity: 1;
+}
+
+textarea.form-control {
+    height: 120px;
+    border: 1px solid #ccc;
+    padding: 10px
 }

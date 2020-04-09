@@ -15,9 +15,10 @@ import EditDashboard from "./components/dashboard/EditDashboard";
 import AddPost from './components/dashboard/AddPost';
 import InfoPost from './components/dashboard/InfoPost';
 import EditPost from './components/dashboard/EditPost';
+import history from './history';
 import './assets/main.css';
-import './assets/app.scss'
-import './assets/app.scss'
+import './assets/app.scss';
+
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
   // Set auth token header auth
@@ -40,8 +41,9 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Router>
+        
           <div className="App">
+          <Router history={history}>
             <Header />
             <Route exact path="/" component={Dashboard} />
             <Route exact path="/dashboard" component={Dashboard} />
@@ -54,8 +56,9 @@ class App extends Component {
               <PrivateRoute exact path="/editdashboard" component={EditDashboard} />
             </Switch>
             <Footer />
+            </Router>
           </div>
-        </Router>
+        
       </Provider>
     );
   }

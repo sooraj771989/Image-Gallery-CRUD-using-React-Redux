@@ -2,51 +2,73 @@
   "posts": [
     {
       "id": 1,
-      "title": "Sooraj",
-      "content": "Dummy Data",
-      "img": "https://goo.gl/3PD40E"
+      "title": "Warren Haslin",
+      "author": "Mary",
+      "content": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.\n\nLorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.",
+      "img": "https://images.unsplash.com/photo-1580341445844-a7776d04ef68?ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60"
     },
     {
       "id": 2,
-      "title": "Image Two",
-      "content": "lorem ipsim",
+      "title": "Jacky S",
+      "author": "Jacky Sheroff",
+      "content": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to .Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to .",
       "img": "https://images.unsplash.com/photo-1479936343636-73cdc5aae0c3?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&s=caf982797b3e3b7eaeb9a1f00915c8d4"
     },
     {
       "id": 3,
       "title": "Image Three",
-      "content": "lorem ipsim",
+      "content": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought t book.",
+      "author": "Leo Messi",
       "img": "https://images.unsplash.com/photo-1483495068880-bebf922d5a27?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&s=ace5bd6dc78499369dcdd4a147bdcd47"
     },
     {
       "id": 4,
       "title": "Image Four",
-      "content": "lorem ipsim",
+      "content": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.",
+      "author": "Ronaldo Xonsol",
       "img": "https://images.unsplash.com/photo-1477619725672-5763118d085e?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&s=a8587766d63073d8addc8de191fddcc3"
     },
     {
       "id": 5,
-      "title": "Image Four",
-      "content": "lorem ipsim",
-      "img": "https://images.unsplash.com/photo-1477619725672-5763118d085e?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&s=a8587766d63073d8addc8de191fddcc3"
+      "title": "Image One ",
+      "author": "Meghan Fox",
+      "content": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.\n\nLorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.\n\nLorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.",
+      "img": "https://images.unsplash.com/photo-1558981408-db0ecd8a1ee4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
     },
     {
       "id": 6,
       "title": "Image Four",
+      "author": "Brian Mark",
       "content": "lorem ipsim",
-      "img": "https://images.unsplash.com/photo-1477619725672-5763118d085e?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&s=a8587766d63073d8addc8de191fddcc3"
+      "img": "https://images.unsplash.com/photo-1586438535319-4a803561abf5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
     },
     {
       "id": 7,
       "title": "Image Three",
-      "content": "lorem ipsim",
+      "author": "Lico Mark",
+      "content": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.",
       "img": "https://images.unsplash.com/photo-1483495068880-bebf922d5a27?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&s=ace5bd6dc78499369dcdd4a147bdcd47"
     },
     {
       "id": 8,
-      "title": "Sooraj",
-      "content": "My Name is sooraj",
+      "title": "Image Title",
+      "author": "Marcelo",
+      "content": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.",
       "img": "https://goo.gl/3PD40E"
+    },
+    {
+      "id": 9,
+      "title": "Image Four",
+      "content": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.",
+      "author": "Ronaldo Xonsol",
+      "img": "https://images.unsplash.com/photo-1586377769469-1a7f0d023b06?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+    },
+    {
+      "id": 10,
+      "title": "Image Four",
+      "content": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.",
+      "author": "Ronaldo Xonsol",
+      "img": "https://images.unsplash.com/photo-1586336900253-bcdfe89ac7a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
     }
   ],
   "users": [
@@ -110,6 +132,56 @@
       "email": "sooraj@gmail.com",
       "password": "123456",
       "id": 11
+    },
+    {
+      "email": "sooraj@gmail.com",
+      "password": "123456",
+      "id": 12
+    },
+    {
+      "email": "sooraj@gmail.com",
+      "password": "123456",
+      "id": 13
+    },
+    {
+      "email": "sooraj@gmail.com",
+      "password": "123456",
+      "id": 14
+    },
+    {
+      "email": "sooraj@gmail.com",
+      "password": "123456",
+      "id": 15
+    },
+    {
+      "email": "sooraj@gmail.com",
+      "password": "123456",
+      "id": 16
+    },
+    {
+      "email": "sooraj@gmail.com",
+      "password": "123456",
+      "id": 17
+    },
+    {
+      "email": "sooraj@gmail.com",
+      "password": "123456",
+      "id": 18
+    },
+    {
+      "email": "sooraj@gmail.com",
+      "password": "123456",
+      "id": 19
+    },
+    {
+      "email": "sooraj@gmail.com",
+      "password": "123456",
+      "id": 20
+    },
+    {
+      "email": "sooraj@gmail.com",
+      "password": "123456",
+      "id": 21
     }
   ]
 }

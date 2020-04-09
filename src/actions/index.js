@@ -28,7 +28,7 @@ export const addArticle = ({ title, content }) => {
         dispatch({type: ADD_ARTICLE, payload: {id: data.id, title: data.title, content: data.content}})
       })
       .then(() => {
-        history.push("/articles")
+        history.push("/editdashboard")
       })
       .catch(error => { throw(error) });
   };
@@ -53,7 +53,7 @@ export const deleteArticle = (id) => {
         dispatch({type: REMOVE_ARTICLE, payload: {id}})
       })
       .then(() => {
-        history.push("/articles")
+        history.push("/editdashboard")
       })
       .catch(error => {
         throw(error);
@@ -64,14 +64,14 @@ export const deleteArticle = (id) => {
 export const updateArticle = (article) => {
   const articleId = article.id;
   return (dispatch) => {
-    return axios.patch(`${apiUrl}/${article.id}`, {title: article.title, content: article.content})
+    return axios.patch(`${apiUrl}/${article.id}`, {title: article.title, content: article.content, author: article.author})
       .then(response => {
         const data = response.data;
-        dispatch({type: UPDATE_ARTICLE, payload: {id: data.id, title: data.title, content: data.content}})
-        dispatch({type: REPLACE_ARTICLE, payload: {id: data.id, title: data.title, content: data.content}})
+        dispatch({type: UPDATE_ARTICLE, payload: {id: data.id, title: data.title, content: data.content, author: data.author}})
+        dispatch({type: REPLACE_ARTICLE, payload: {id: data.id, title: data.title, content: data.content, author: data.author}})
       })
       .then(() => {
-        history.push(`/articles/${articleId}`)
+        history.push(`/post/${articleId}`)
       })
       .catch(error => { throw(error) });
   };
