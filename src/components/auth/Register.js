@@ -38,19 +38,19 @@ this.props.registerUser(newUser, this.props.history);
 render() {
     const { errors } = this.state;
 return (
-      <div className="container">
-        <div className="row">
+      <div className="container py-16 mx-auto">
+        <div className="w-full lg:w-6/12 mx-auto">
           <div className="col s8 offset-s2">
             <Link to="/" className="btn-flat waves-effect">
               <i className="material-icons left">keyboard_backspace</i> Back to
               home
             </Link>
             <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-              <h4>
-                <b>Register</b> below
+              <h4 className="text-center text-3xl font-bold">
+                 Register Here 
               </h4>
-              <p className="grey-text text-darken-1">
-                Already have an account? <Link to="/login">Log in</Link>
+              <p className="text-gray-600 text-center mt-6">
+                Already have an account? <Link to="/login" className="text-blue-600">Log in</Link>
               </p>
             </div>
             <form noValidate onSubmit={this.onSubmit}>
@@ -110,7 +110,7 @@ return (
                 <label htmlFor="password2">Confirm Password</label>
                 <span className="red-text">{errors.password2}</span>
               </div>
-              <div className="col s12" style={{ paddingLeft: "11.250px" }}>
+              <div className="col s12"  >
                 <button
                   style={{
                     width: "150px",

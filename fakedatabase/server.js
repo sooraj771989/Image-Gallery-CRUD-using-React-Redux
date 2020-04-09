@@ -33,58 +33,69 @@ function isLoginAuthenticated({email}){
   console.log(email);
   return userdb.users.findIndex(user => user.email === email) !== -1
 }
+
+ 
 // Register New User
 server.post('/auth/register', (req, res) => {
   console.log("register endpoint called; request body:");
   console.log(req.body);
+ 
   const name = req.body.name;
   const email = req.body.email;
   var password = req.body.password;
-  const { errors, isValid } = validateRegisterInput(req.body);
-  // Check validation
+  
+  
   if (!isValid) {
     return res.status(400).json(errors);
   }
-  if(isAuthenticated({name, email, password}) === true) {
-    return res.status(400).json({ email: "Email already exists" });
-  }  
-    bcrypt.genSalt(10, (err, salt) => {
-      bcrypt.hash(password, salt, (err, hash) => {
-        if (err) throw err;
-        password = hash;
-        fs.readFile("./users.json", (err, data) => {  
+   
+
+  if(isAuthenticated({email, password}) === true) {
+    const status = 401;
+    const message = 'Email and Password already exist';
+    res.status(status).json({status, message});
+    return
+  }
+ 
+  fs.readFile("./fakedatabase/users.json", (err, data) => {  
+    if (err) {
+      const status = 401
+      const message = err
+      res.status(status).json({status, message})
+      return
+    };
+
+    // Get current users data
+    var data = JSON.parse(data.toString());
+
+    // Get the id of last user
+    var last_item_id = data.users[data.users.length-1].id;
+
+    //Add new user
+    data.users.push({id: last_item_id + 1, email: email, password: password}); //add some data
+    var writeData = fs.writeFile("./fakedatabase/users.json", JSON.stringify(data), (err, result) => {  // WRITE
         if (err) {
-        const status = 401
-        const message = err
-        res.status(status).json({status, message})
-        return
-        };
-          // Get current users data
-          var data = JSON.parse(data.toString());
-          // Get the id of last user
-          var last_item_id = data.users[data.users.length-1].id;
-          //Add new user
-          data.users.push({id: last_item_id + 1, name: name, email: email, password: password}); //add some data
-          var writeData = fs.writeFile("./users.json", JSON.stringify(data), (err, result) => {  // WRITE
-              if (err) {
-                const status = 401
-                const message = err
-                res.status(status).json({status, message})
-                return
-              }
-          });
-      });
+          const status = 401
+          const message = err
+          res.status(status).json({status, message})
+          return
+        }
     });
 });
+
 // Create token for new user
   const access_token = createToken({email, password})
   console.log("Access Token:" + access_token);
-  res.status(200).json(access_token)
+  res.status(200).json({access_token})
 })
+
+ 
 // Login to one of the users from ./users.json
+ 
 server.post('/auth/login', (req, res) => {
   console.log("login endpoint called; request body:");
   console.log(req.body);
+  
   const email = req.body.email;
   const password = req.body.password;
   if (isLoginAuthenticated({email}) === false) {
@@ -92,38 +103,15 @@ server.post('/auth/login', (req, res) => {
     const message = 'Incorrect email or password'
     return res.status(404).json({ emailnotfound: "Email not found" });
   }
-     let obj = userdb.users.find(obj => obj.email == email);
-       userpassword = obj.password;
-       console.log(obj.password);
-    bcrypt.compare(password, userpassword).then(isMatch => {
-    if (isMatch) {
-      // User matched
-      // Create JWT Payload
-      console.log("sa");
-      const payload = {
-        id: user.id,
-        name: user.name
-      };
-        jwt.sign(
-          payload,
-          keys.secretOrKey,
-          {
-            expiresIn: 31556926 // 1 year in seconds
-          },
-          (err, token) => {
-            res.json({
-              success: true,
-              token: "Bearer " + token
-            });
-          }
-        );
-      } else {
-        return res
-          .status(400)
-          .json({ passwordincorrect: "Password incorrect" });
-      }
-    });
+ 
+  const access_token = createToken({email, password})
+  console.log("Access Token:" + access_token);
+  res.status(200).json({access_token})
 })
+
+
+
+
 server.get(
   "/currentuser",
   passport.authenticate("jwt", { session: false }),

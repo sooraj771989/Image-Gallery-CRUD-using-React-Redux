@@ -1,39 +1,50 @@
 import React, { Component } from "react";
-import { BrowserRouter, Link } from "react-router-dom";
+import { BrowserRouter, Link, NavLink } from "react-router-dom";
+import { logoutUser } from "../../actions/authActions";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 class Navbar extends Component {
+  onLogoutClick = e => {
+    e.preventDefault();
+    this.props.logoutUser();
+  };
     render() {
+      const { user } = this.props.auth;
       return (
-        <BrowserRouter>
-        <div className="bg-white shadow ">
- 
-            <div className="container mx-auto flex justify-between py-4">
+        <div className="bg-white shadow container px-4">
+            <div className="container mx-auto flex justify-between py-2 items-center">
               <Link
                 to="/"
                 style={{
                   fontFamily: "monospace"
                 }}
-                className="font-bold text-black"
+                className="text-black px-4 py-4 font-bold text-black"
               >
                 Image Gallery
               </Link>
-
-              <div> Login </div>
-             
-           
+              <div>
+              <NavLink activeClassName="active" className="px-4" to="/login">
+                Log In
+              </NavLink>
+              <NavLink activeClassName="active" className="px-4" to="/register">
+               Register
+              </NavLink>
+              </div>
         </div>
-
-        <div className="container mx-auto  py-4">
-         <div className="flex flex-row">
-           Images
-           Edit Images
-         </div>
+        <div className="navbar-links container mx-auto flex flex-row py-2">
+         <NavLink  exact to="/"  className="text-black px-4 py-4">Images</NavLink>
+         <NavLink exact  to="/editdashboard"  className="text-black px-4 py-4">Edit Images</NavLink>
+         <NavLink exact className="text-black px-4 py-4" to="/articles/new">Add New Image</NavLink>
         </div>        
-
-
-
         </div>
-        </BrowserRouter>
       );
     }
   }
-  export default Navbar;
+  Navbar.propTypes = {
+    logoutUser: PropTypes.func.isRequired,
+    auth: PropTypes.object.isRequired
+  };
+  const mapStateToProps = state => ({
+    auth: state.auth
+  });
+  export default connect(mapStateToProps,{ logoutUser })(Navbar);
