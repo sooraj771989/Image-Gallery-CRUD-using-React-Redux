@@ -6,7 +6,7 @@ class EditDashboard extends Component {
     if(this.props.articles.length) {                                
       return (
         <React.Fragment>
-        <div className="container flex flex-row py-10 px-10 flex-wrap padding-top-div">
+        <div className="w-full flex flex-row py-10 px-10 flex-wrap padding-top-div">
         <div className="w-full  py-6 px-6 text-center text-2xl font-bold">
           Edit Image
         </div>
