@@ -16,7 +16,7 @@ class AddPost extends React.Component {
 
   render() {
     return (
-      <div className="container py-16 mx-auto padding-top-div">
+      <div className="w-full py-16 mx-auto padding-top-div">
       <div className="w-full lg:w-6/12 mx-auto"> 
         <h4>Add New Image</h4>
         <form onSubmit={ this.handleSubmit }>
