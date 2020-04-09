@@ -1,5 +1,8 @@
 a:hover{
-    cursor:pointer
+    cursor:pointer;
+}
+a:focus{
+    outline:none;
 }
 .post-images{
     width: 100%;
@@ -25,4 +28,8 @@ a:hover{
 
 .dashboard-image:hover{
     cursor: zoom-in;
+}
+
+.padding-top-div{
+    padding-top:30vh;
 }

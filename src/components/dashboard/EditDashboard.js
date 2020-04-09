@@ -7,15 +7,15 @@ class EditDashboard extends Component {
       return (
         <React.Fragment>
        
-        <div className="container flex flex-row py-10 px-10 flex-wrap">
-        <div className="mt-32  container py-6 px-6 text-center font-bold">
+        <div className="container flex flex-row py-10 px-10 flex-wrap padding-top-div">
+        <div className="w-full  py-6 px-6 text-center text-2xl font-bold">
           Edit Image
         </div>
           {this.props.articles.map(article => {                     
             return (
               <React.Fragment>
  
-              <div  className="w-full lg:w-4/12 mb-4 px-4" key={ article.id }>                              
+              <div className="w-full lg:w-4/12 mb-10 px-4" key={article.id}>                              
               <Link to={`/articles/${article.id}`}>
                 <img className="post-images" src={ article.img}></img>
                 </Link>

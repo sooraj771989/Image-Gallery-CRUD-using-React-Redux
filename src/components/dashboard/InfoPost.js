@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getArticle, deleteArticle } from './../../actions/index';    
 
-class ArticleInfo extends Component {
+class InfoPost extends Component {
   componentDidMount() {                                                         
     this.props.getArticle(this.props.match.params.id);
   }
@@ -11,12 +11,12 @@ class ArticleInfo extends Component {
   render() {
     const article = this.props.article;
     return (
-      <div className="container py-16 mx-auto">
-      <div className="mt-32  w-full lg:w-6/12 mx-auto"> 
-      <div className="justify-center items-center flex flex-col">
-        <h2 className="font-bold"><img className="post-edit-image" src={article.img}></img></h2>
-        <h2 className="font-bold">{article.title}</h2>
-        <p className="text-gray-600">{article.content}</p>
+      <div className="container py-16 mx-auto padding-top-div">
+      <div className="w-full lg:w-6/12 mx-auto"> 
+      <div className="justify-center flex flex-col">
+        <img className="post-edit-image" src={article.img}></img>
+        <h2 className="font-bold mt-6">{article.title}</h2>
+        <p className="text-gray-600 mt-4">{article.content}</p>
         <div className="btn-group mt-4 mb-4">
           <Link to={{ pathname: `/articles/${article.id}/edit`, state: { article: article } }} className='btn btn-info mr-4 '>  
             Edit
@@ -37,4 +37,4 @@ const mapStateToProps = (state) => ({ article: state.article });
 
 const mapDispatchToProps = { getArticle, deleteArticle };                        
 
-export default connect(mapStateToProps, mapDispatchToProps)(ArticleInfo);        
+export default connect(mapStateToProps, mapDispatchToProps)(InfoPost);        

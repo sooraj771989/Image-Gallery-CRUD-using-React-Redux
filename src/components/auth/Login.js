@@ -13,44 +13,44 @@ class Login extends Component {
       errors: {}
     };
   }
-componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
       this.props.history.push("/dashboard"); // push user to dashboard when they login
     }
-if (nextProps.errors) {
+    if (nextProps.errors) {
       this.setState({
         errors: nextProps.errors
       });
     }
   }
-onChange = e => {
+  onChange = e => {
     this.setState({ [e.target.id]: e.target.value });
   };
-onSubmit = e => {
+  onSubmit = e => {
     e.preventDefault();
-const userData = {
+    const userData = {
       email: this.state.email,
       password: this.state.password
     };
-this.props.loginUser(userData); // since we handle the redirect within our component, we don't need to pass in this.props.history as a parameter
+    this.props.loginUser(userData); // since we handle the redirect within our component, we don't need to pass in this.props.history as a parameter
   };
-render() {
+  render() {
     const { errors } = this.state;
-return (
-  <div className="container py-16 mx-auto">
-  <div className="w-full lg:w-6/12 mx-auto">
-        
+    return (
+      <div className="container py-16 mx-auto padding-top-div">
+        <div className="w-full lg:w-6/12 mx-auto">
+
           <div className="col s8 offset-s2 py-16">
             <Link to="/" className="btn-flat waves-effect">
               <i className="material-icons left">keyboard_backspace</i> Back to
               home
             </Link>
-            <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-            <h4 className="text-center text-3xl font-bold">
-                 Login Here 
+            <div className="col s12">
+              <h4 className="text-center text-3xl font-bold">
+                Login Here
               </h4>
               <p className="text-gray-600 text-center mt-6">
-                Don't have an account? <Link to="/register" className="text-blue-600">Register</Link>
+                Don't have an account? <Link to="/register" className="font-semibold text-blue-600">Register</Link>
               </p>
             </div>
             <form noValidate onSubmit={this.onSubmit}>
@@ -90,7 +90,7 @@ return (
               </div>
               <div className="col s12" >
                 <button
-                  
+
                   type="submit"
                   className="btn btn-large waves-effect waves-light hoverable blue accent-3"
                 >
@@ -98,7 +98,7 @@ return (
                 </button>
               </div>
             </form>
-            </div>
+          </div>
         </div>
       </div>
     );

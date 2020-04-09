@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { updateArticle } from './../../actions/index';
 
-class ArticleEdit extends React.Component {
+class EditPost extends React.Component {
   handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
   };
@@ -22,9 +22,9 @@ class ArticleEdit extends React.Component {
 
   render() {
     return (
-      <div className="container py-16 mx-auto">
-          <div className="mt-32  w-full lg:w-6/12 mx-auto">  
-        <h1 className="text-center font-bold ">Edit Image {this.props.article.title}</h1>
+      <div className="container py-16 mx-auto padding-top-div">
+          <div className=" w-full lg:w-6/12 mx-auto">  
+        <h1 className="text-center font-bold text-2xl">Edit Image {this.props.article.title}</h1>
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label>Title</label>
@@ -49,4 +49,4 @@ const mapStateToProps = (state) => ({ article: state.article });
 
 const mapDispatchToProps = { updateArticle };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ArticleEdit);
+export default connect(mapStateToProps, mapDispatchToProps)(EditPost);

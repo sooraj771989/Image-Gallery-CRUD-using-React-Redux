@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { addArticle } from './../../actions/index';                      
 
-class ArticleAdd extends React.Component {
+class AddPost extends React.Component {
   state = { img:'', title: '', content: '' };
 
   handleChange = (event) => {
@@ -16,7 +16,7 @@ class ArticleAdd extends React.Component {
 
   render() {
     return (
-      <div className="container py-16 mx-auto">
+      <div className="container py-16 mx-auto padding-top-div">
       <div className="w-full lg:w-6/12 mx-auto"> 
         <h4>Add New Image</h4>
         <form onSubmit={ this.handleSubmit }>
@@ -38,4 +38,4 @@ class ArticleAdd extends React.Component {
 
 const mapDispatchToProps = { addArticle };                     
 
-export default connect(null, mapDispatchToProps)(ArticleAdd);  
+export default connect(null, mapDispatchToProps)(AddPost);  

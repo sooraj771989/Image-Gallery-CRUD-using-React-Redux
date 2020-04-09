@@ -33,13 +33,13 @@ class Dashboard extends Component {
   render() {
     if (this.props.articles.length) {
       return (
-        <div className="container flex flex-row py-10 px-10 flex-wrap">
+        <div className="container flex flex-row py-10 px-10 flex-wrap padding-top-div">
           {this.props.articles.map(article => {
             return (
-              <div className="w-full lg:w-4/12 mb-10 px-4 mt-32 " key={article.id}>
+              <div className="w-full lg:w-4/12 mb-10 px-4" key={article.id}>
                 <div className="relative"  >
                   <a className="dashboard-image" onClick={() => this.showGalleryImage(article)}  >
-                    <img src={article.img} className="object-cover w-full h-screen remove-project-preview-img" />
+                    <img src={article.img} className="object-cover w-full h-screen" />
                   </a>
                   <div className="absolute bottom-0 left-0 hidden p-2 mb-5 ml-5 text-sm text-white bg-white caption md:block">
                     <p className="text-black">
@@ -63,7 +63,7 @@ class Dashboard extends Component {
         </div>
       )
     } else {
-      return (<div className="container flex flex-row py-10 px-10 flex-wrap">No Images</div>)
+      return (<div className="container flex flex-row py-10 px-10 flex-wrap padding-top-div">No Images</div>)
     }
   }
 }
