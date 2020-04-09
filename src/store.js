@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware, compose } from "redux";
-import { getPosts } from './actions';
+import { getArticles } from './actions';
 import thunk from "redux-thunk";
 import rootReducer from "./reducers";
 const initialState = {};
@@ -12,6 +12,6 @@ const store = createStore(
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   )
 );
-store.dispatch(getPosts()); 
+store.dispatch(getArticles()); 
 
 export default store;

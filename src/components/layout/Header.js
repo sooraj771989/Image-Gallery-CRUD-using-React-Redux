@@ -11,7 +11,7 @@ class Header extends Component {
     render() {
       const { user } = this.props.auth;
       return (
-        <div className="fixed bg-white shadow container px-4 z-10">
+        <div className="fixed bg-white shadow container z-10">
             <div className="container mx-auto flex justify-between px-2 items-center">
               <Link
                 to="/"

@@ -6,7 +6,6 @@ class EditDashboard extends Component {
     if(this.props.articles.length) {                                
       return (
         <React.Fragment>
-       
         <div className="container flex flex-row py-10 px-10 flex-wrap padding-top-div">
         <div className="w-full  py-6 px-6 text-center text-2xl font-bold">
           Edit Image
@@ -14,13 +13,15 @@ class EditDashboard extends Component {
           {this.props.articles.map(article => {                     
             return (
               <React.Fragment>
- 
               <div className="w-full lg:w-4/12 mb-10 px-4" key={article.id}>                              
-              <Link to={`/articles/${article.id}`}>
-                <img className="post-images" src={ article.img}></img>
-                </Link>
-                <p className="font-bold mt-2">{article.title}</p>
-                <p className="text-sm">{article.content} </p>
+              <div className="relative"  >
+                    <img src={article.img} className="post-images" />
+                  <div className="absolute bottom-0 left-0 hidden p-2 mb-5 ml-5 text-sm text-white bg-white caption md:block">
+                    <p className="text-black">
+                      {article.title}   </p>
+                  </div>
+                </div>
+                <p className="text-sm mt-2 text-gray-600">{article.content} </p>
                 <div className="btn-group mt-4">
               <Link to={`/articles/${article.id}`}  className='btn btn-info'>  
                 Edit
