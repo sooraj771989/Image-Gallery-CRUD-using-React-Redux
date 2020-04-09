@@ -38,7 +38,7 @@ class Dashboard extends Component {
   render() {
     if (this.props.articles.length) {
       return (
-        <div className="container flex flex-row py-10 px-10 flex-wrap padding-top-div">
+        <div className="w-full flex flex-row py-10 px-10 flex-wrap padding-top-div">
           {this.props.articles.map(article => {
             return (
               <div className="w-full lg:w-4/12 mb-10 px-4" key={article.id}>
