@@ -5,7 +5,8 @@ import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import store from "./store";
-import Navbar from "./components/layout/Navbar";
+import Header from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
 import Landing from "./components/layout/Landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
@@ -47,7 +48,7 @@ class App extends Component {
 
         <Router>
           <div className="App">
-            <Navbar />
+            <Header />
             <Route exact path="/" component={Dashboard} />
             <Route exact path="/dashboard" component={Dashboard} />
             <Route exact path="/register" component={Register} />
@@ -59,6 +60,7 @@ class App extends Component {
                 <PrivateRoute exact path="/articles/:id/edit" component={ArticleEdit} />
               <PrivateRoute exact path="/editdashboard" component={EditDashboard} />
             </Switch>
+            <Footer/> 
           </div>
         </Router>
       </Provider>

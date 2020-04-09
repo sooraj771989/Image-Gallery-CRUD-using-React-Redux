@@ -2,14 +2,33 @@ import axios from "axios";
 import setAuthToken from "../utils/setAuthToken";
 import jwt_decode from "jwt-decode";
 import { GET_ERRORS, SET_CURRENT_USER, USER_LOADING } from "./types";
+const jwt = require('jsonwebtoken')
+const SECRET_KEY = '123456789'
+const expiresIn = '1h'
+const apiUrl ="http://localhost:3001/users";
+
+function createToken(payload){
+  return jwt.sign(payload, SECRET_KEY, {expiresIn})
+}
+
 // Register User
 export const registerUser = (userData, history) => dispatch => {
-  var obj = {
-    "email": userData.email,
-    "password": userData.password
-  }
+ 
+  // Get current users data
+  var data = JSON.parse(data.toString());
+
+  // Get the id of last user
+  var last_item_id = data.users[data.users.length-1].id;
+
+  const newUser = {
+    id: last_item_id,
+    name: userData.name,
+    email: userData.email,
+    password: userData.password,
+  };
+ 
   axios
-    .post("http://localhost:8000/auth/register", userData)
+    .post(`${apiUrl}`, newUser)
     .then(res => history.push("/login"))
     .catch(err =>
       dispatch({
@@ -18,21 +37,29 @@ export const registerUser = (userData, history) => dispatch => {
       })
     );
 };
+
+
+
 // Login - get user token
 export const loginUser = userData => dispatch => {
-  axios.post("http://localhost:8000/auth/login", userData)
+  axios.post(`${apiUrl}?email=${userData.email}&password=${userData.password}`, userData)
     .then(res => {
-     
-      const token  = res.data.access_token;
+
+      console.log("login endpoint called; request body:");
+      console.log(res);
+      const email = userData.email;
+      const password = userData.password;
+
+      const access_token = createToken({email, password})
+
+      const token  = access_token;
       localStorage.setItem("jwtToken", token);
       // Set token to Auth header
       setAuthToken(token);
       // Decode token to get user data
       const decoded = jwt_decode(token);
       // Set current user
-    
       dispatch(setCurrentUser(userData.email));
-      
     })
     .catch(err =>
       dispatch({

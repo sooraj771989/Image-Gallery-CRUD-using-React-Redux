@@ -23,8 +23,8 @@ class ArticleEdit extends React.Component {
   render() {
     return (
       <div className="container py-16 mx-auto">
-          <div className="w-full lg:w-6/12 mx-auto">  
-        <h1 className="text-center  ">Edit {this.props.article.title}</h1>
+          <div className="mt-32  w-full lg:w-6/12 mx-auto">  
+        <h1 className="text-center font-bold ">Edit Image {this.props.article.title}</h1>
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label>Title</label>
@@ -35,7 +35,7 @@ class ArticleEdit extends React.Component {
             <textarea name="content" rows="5" defaultValue={this.props.article.content} onChange={this.handleChange} className="form-control" />
           </div>
           <div className="btn-group">
-            <button type="submit" className="btn btn-dark">Update</button>
+            <button type="submit" className="mr-4 btn btn-dark">Update</button>
             <button type="button" onClick={this.handleCancel} className="btn btn-secondary">Cancel</button>
           </div>
         </form>

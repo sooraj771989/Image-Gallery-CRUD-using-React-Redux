@@ -2,7 +2,7 @@
   "posts": [
     {
       "id": 1,
-      "title": "Image One",
+      "title": "Sooraj",
       "content": "lorem ipsim",
       "img": "https://goo.gl/3PD40E"
     },
@@ -44,21 +44,72 @@
     },
     {
       "id": 8,
-      "title": "Image One",
-      "content": "lorem ipsim",
+      "title": "Sooraj",
+      "content": "My Name is sooraj",
       "img": "https://goo.gl/3PD40E"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "sooraj",
+      "email": "sooraj@gmail.com",
+      "password": "1234"
     },
     {
-      "id": 9,
-      "title": "Image Three",
-      "content": "lorem ipsim",
-      "img": "https://images.unsplash.com/photo-1483495068880-bebf922d5a27?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&s=ace5bd6dc78499369dcdd4a147bdcd47"
+      "id": 2,
+      "name": "sooraj",
+      "email": "sooraj@gmail.com",
+      "password": "1234"
     },
     {
-      "id": 10,
-      "title": "Image One",
-      "content": "lorem ipsim",
-      "img": "https://goo.gl/3PD40E"
+      "id": 3,
+      "name": "sooraj",
+      "email": "sooraj@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": 4,
+      "name": "sooraj",
+      "email": "sooraj@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": 5,
+      "name": "sooraj",
+      "email": "sooraj@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": 6,
+      "name": "sooraj",
+      "email": "sooraj@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": 7,
+      "name": "sooraj",
+      "email": "sooraj@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": 8,
+      "name": "sooraj",
+      "email": "sooraj@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": 9
+    },
+    {
+      "email": "sooraj@gmail.com",
+      "password": "123456",
+      "id": 10
+    },
+    {
+      "email": "sooraj@gmail.com",
+      "password": "123456",
+      "id": 11
     }
   ]
 }

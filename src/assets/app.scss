@@ -1,6 +1,18 @@
+a:hover{
+    cursor:pointer
+}
 .post-images{
     width: 100%;
     height: 300px;
+}
+
+.post-edit-image{
+    height: 300px;
+}
+
+.dialog-image{
+    width: 100%;
+    height: 600px;
 }
 
 .navbar-links a:hover{
@@ -9,4 +21,8 @@
 
 .navbar-links a.active{
     border-bottom: 2px solid #000;
+}
+
+.dashboard-image:hover{
+    cursor: zoom-in;
 }
