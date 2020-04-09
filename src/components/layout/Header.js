@@ -13,7 +13,7 @@ class Header extends Component {
     const { user } = this.props.auth;
     return (
       <div className="fixed bg-white shadow w-full z-10 mx-auto">
-        <div className="container mx-auto flex justify-between px-2 items-center">
+        <div className="w-full mx-auto flex justify-between px-2 items-center">
           <Link
             to="/"
             className="text-black px-4 py-4 font-bold flex items-center text-black"
@@ -41,7 +41,7 @@ class Header extends Component {
             }
           </div>
         </div>
-        <div className="navbar-links container mx-auto flex flex-row px-2">
+        <div className="navbar-links w-full mx-auto flex flex-row px-2">
           <NavLink exact to="/" className="text-black px-4 py-4">Images</NavLink>
           <NavLink exact to="/editdashboard" className="text-black px-4 py-4">Edit Images</NavLink>
         </div>
