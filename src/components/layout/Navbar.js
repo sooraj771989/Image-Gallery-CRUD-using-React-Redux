@@ -4,21 +4,33 @@ class Navbar extends Component {
     render() {
       return (
         <BrowserRouter>
-        <div className="navbar-fixed">
-          <nav className="z-depth-0">
-            <div className="nav-wrapper white">
+        <div className="bg-white shadow ">
+ 
+            <div className="container mx-auto flex justify-between py-4">
               <Link
                 to="/"
                 style={{
                   fontFamily: "monospace"
                 }}
-                className="col s5 brand-logo center black-text"
+                className="font-bold text-black"
               >
-                <i className="material-icons">code</i>
                 Image Gallery
               </Link>
-            </div>
-          </nav>
+
+              <div> Login </div>
+             
+           
+        </div>
+
+        <div className="container mx-auto  py-4">
+         <div className="flex flex-row">
+           Images
+           Edit Images
+         </div>
+        </div>        
+
+
+
         </div>
         </BrowserRouter>
       );

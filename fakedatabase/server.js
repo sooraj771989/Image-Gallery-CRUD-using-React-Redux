@@ -135,11 +135,10 @@ server.get(
     });
   }
 );
-server.get("/auth/allposts",
+server.get("/auth/posts",
   (req, res) => {
     res.json(postdb.posts);
-    // console.log( res.json(router));
-    // res.json(router)
+    
   }
 );
 server.use(/^(?!\/auth).*$/,  (req, res, next) => {
