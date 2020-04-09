@@ -15,7 +15,7 @@ class InfoPost extends Component {
       <div className="justify-center flex flex-col mx-auto w-full lg:w-6/12 mx-auto"> 
  
         <div>
-          <img className="post-edit-image" src={article.img}></img>
+          <img className="post-edit-image" src={article.img} />
           </div>
         <h2 className="font-bold mt-6">{article.title}</h2>
         <p className="text-gray-600 mt-4">{article.content}</p>
