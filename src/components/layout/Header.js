@@ -26,7 +26,7 @@ class Header extends Component {
               <span className=" ">Photos for everyone</span>
             </div>
           </Link>
-          <div>
+          <div className="text-black px-4 py-4 font-bold flex items-center text-black">
             {(isEmpty(user)) ?
               (
                 <div>
