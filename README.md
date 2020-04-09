@@ -1,5 +1,7 @@
 ## Image Gallery
 
+<img src="doc/ImageGallery.png" style="width:600px;">
+
 Go to project root folder  and 'npm i' to install all the packages
 
 ## Run Server 
