@@ -1,4 +1,4 @@
-import { RECEIVE_POSTS, ADD_POST, REMOVE_POST } from '../actions/types';
+import { RECEIVE_POSTS, ADD_POST, REMOVE_POST } from '../const';
 
 const initialState = { posts: [] }
 

@@ -1,11 +1,13 @@
 import axios from "axios";
 import setAuthToken from "../utils/setAuthToken";
 import jwt_decode from "jwt-decode";
-import { GET_ERRORS, SET_CURRENT_USER, USER_LOADING } from "./types";
+import { GET_ERRORS, SET_CURRENT_USER, USER_LOADING } from "../const";
+import { usersAPIUrl } from "../api";
+
 const jwt = require('jsonwebtoken')
-const SECRET_KEY = '123456789'
-const expiresIn = '1h'
-const apiUrl ="http://localhost:3001/users";
+const SECRET_KEY = '123456789';
+const expiresIn = '1h';
+
 function createToken(payload){
   return jwt.sign(payload, SECRET_KEY, {expiresIn})
 }
@@ -22,7 +24,7 @@ export const registerUser = (userData, history) => dispatch => {
     password: userData.password,
   };
   axios
-    .post(`${apiUrl}`, newUser)
+    .post(`${usersAPIUrl}`, newUser)
     .then(res => history.push("/login"))
     .catch(err =>
       dispatch({
@@ -31,9 +33,10 @@ export const registerUser = (userData, history) => dispatch => {
       })
     );
 };
+
 // Login - get user token
 export const loginUser = userData => dispatch => {
-  axios.post(`${apiUrl}?email=${userData.email}&password=${userData.password}`, userData)
+  axios.post(`${usersAPIUrl}?email=${userData.email}&password=${userData.password}`, userData)
     .then(res => {
       console.log("login endpoint called; request body:");
       console.log(res);
@@ -56,6 +59,7 @@ export const loginUser = userData => dispatch => {
       })
     );
 };
+
 // Set logged in user
 export const setCurrentUser = decoded => {
   return {
@@ -63,12 +67,14 @@ export const setCurrentUser = decoded => {
     payload: decoded
   };
 };
+
 // User loading
 export const setUserLoading = () => {
   return {
     type: USER_LOADING
   };
 };
+
 // Log user out
 export const logoutUser = () => dispatch => {
   // Remove token from local storage

@@ -108,7 +108,7 @@ class Dashboard extends Component {
     } else {
       return (
         <div className="container flex flex-row py-10 px-10 flex-wrap padding-top-div">
-          No Images
+          <div className="py-10 flex justify-center w-full">Sorry! No Images to show</div>
         </div>
       );
     }

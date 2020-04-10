@@ -1,4 +1,4 @@
-import { RECEIVE_POST } from '../actions/types';
+import { RECEIVE_POST } from '../const';
 
 export default function postReducer(state = {}, action) {  
   switch (action.type) {
