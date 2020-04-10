@@ -10,7 +10,7 @@ class Login extends Component {
     this.state = {
       email: "",
       password: "",
-      errors: {}
+      errors: {},
     };
   }
   componentWillReceiveProps(nextProps) {
@@ -19,38 +19,38 @@ class Login extends Component {
     }
     if (nextProps.errors) {
       this.setState({
-        errors: nextProps.errors
+        errors: nextProps.errors,
       });
     }
   }
-  onChange = e => {
+
+  onChange = (e) => {
     this.setState({ [e.target.id]: e.target.value });
   };
-  onSubmit = e => {
+
+  onSubmit = (e) => {
     e.preventDefault();
     const userData = {
       email: this.state.email,
-      password: this.state.password
+      password: this.state.password,
     };
-    this.props.loginUser(userData); // since we handle the redirect within our component, we don't need to pass in this.props.history as a parameter
+    this.props.loginUser(userData);
   };
+
   render() {
     const { errors } = this.state;
     return (
       <div className="container py-16 mx-auto padding-top-div">
-        <div className="w-full lg:w-6/12 mx-auto">
-
+        <div className="w-10/12 lg:w-6/12 mx-auto">
           <div className="col s8 offset-s2 py-16">
-            <Link to="/" className="btn-flat waves-effect">
-              <i className="material-icons left">keyboard_backspace</i> Back to
-              home
-            </Link>
+             
             <div className="col s12">
-              <h4 className="text-center text-3xl font-bold">
-                Login Here
-              </h4>
+              <h4 className="text-center text-3xl font-bold">Login Here</h4>
               <p className="text-gray-600 text-center mt-6">
-                Don't have an account? <Link to="/register" className="font-semibold text-blue-600">Register</Link>
+                Don't have an account?{" "}
+                <Link to="/register" className="font-semibold text-blue-600">
+                  Register
+                </Link>
               </p>
             </div>
             <form noValidate onSubmit={this.onSubmit}>
@@ -62,7 +62,7 @@ class Login extends Component {
                   id="email"
                   type="email"
                   className={classnames("", {
-                    invalid: errors.email || errors.emailnotfound
+                    invalid: errors.email || errors.emailnotfound,
                   })}
                 />
                 <label htmlFor="email">Email</label>
@@ -79,7 +79,7 @@ class Login extends Component {
                   id="password"
                   type="password"
                   className={classnames("", {
-                    invalid: errors.password || errors.passwordincorrect
+                    invalid: errors.password || errors.passwordincorrect,
                   })}
                 />
                 <label htmlFor="password">Password</label>
@@ -88,9 +88,8 @@ class Login extends Component {
                   {errors.passwordincorrect}
                 </span>
               </div>
-              <div className="col s12" >
+              <div className="col s12">
                 <button
-
                   type="submit"
                   className="btn btn-large waves-effect waves-light hoverable blue accent-3"
                 >
@@ -104,16 +103,16 @@ class Login extends Component {
     );
   }
 }
+
 Login.propTypes = {
   loginUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
-  errors: PropTypes.object.isRequired
+  errors: PropTypes.object.isRequired,
 };
-const mapStateToProps = state => ({
+
+const mapStateToProps = (state) => ({
   auth: state.auth,
-  errors: state.errors
+  errors: state.errors,
 });
-export default connect(
-  mapStateToProps,
-  { loginUser }
-)(Login);
+
+export default connect(mapStateToProps, { loginUser })(Login);

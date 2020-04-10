@@ -39,12 +39,9 @@ render() {
     const { errors } = this.state;
 return (
       <div className="container py-8 mx-auto padding-top-div">
-        <div className="w-full lg:w-6/12 mx-auto">
+        <div className="w-10/12 lg:w-6/12 mx-auto">
           <div className="col s8 offset-s2">
-            <Link to="/" className="btn-flat waves-effect">
-              <i className="material-icons left">keyboard_backspace</i> Back to
-              home
-            </Link>
+            
             <div className="col s12">
               <h4 className="text-center text-3xl font-bold">
                  Register Here 

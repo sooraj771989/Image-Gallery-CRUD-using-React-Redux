@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch, NavLink } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
@@ -16,8 +16,8 @@ import AddPost from './components/dashboard/AddPost';
 import InfoPost from './components/dashboard/InfoPost';
 import EditPost from './components/dashboard/EditPost';
 import history from './history';
-import './assets/main.css';
-import './assets/app.scss';
+import './assets/css/main.css';
+import './assets/css/app.scss';
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -41,7 +41,6 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        
           <div className="App">
           <Router history={history}>
             <Header />
@@ -58,7 +57,6 @@ class App extends Component {
             <Footer />
             </Router>
           </div>
-        
       </Provider>
     );
   }
