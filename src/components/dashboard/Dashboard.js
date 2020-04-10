@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux"; 
 import Dialog from "@material-ui/core/Dialog";
 import { getPosts } from "../../actions/postActions";
+import PropTypes from "prop-types";
+
 class Dashboard extends Component {
   constructor(props) {
     super(props);
@@ -82,11 +84,11 @@ class Dashboard extends Component {
                 alt="close"
               >
               <svg
-                class="_3p8U1"
+                 
                 version="1.1"
                 viewBox="0 0 32 32"
-                width="32"
-                height="32"
+                width="20"
+                height="20"
                 aria-hidden="false"
               >
                 <path d="M25.33 8.55l-1.88-1.88-7.45 7.45-7.45-7.45-1.88 1.88 7.45 7.45-7.45 7.45 1.88 1.88 7.45-7.45 7.45 7.45 1.88-1.88-7.45-7.45z"></path>
@@ -108,14 +110,14 @@ class Dashboard extends Component {
     } else {
       return (
         <div className="container flex flex-row py-10 px-10 flex-wrap padding-top-div">
-          <div className="py-10 flex justify-center w-full">Sorry! No Images to show</div>
+          <div className="py-10 flex justify-center w-full">Sorry!! No Images to show</div>
         </div>
       );
     }
   }
 }
-Dashboard.propTypes = {
-  getPosts: getPosts.getAllArticles,
-};
+
+
 const mapStateToProps = (state) => ({ posts: state.posts });
+
 export default connect(mapStateToProps, { getPosts })(Dashboard);

@@ -4,6 +4,11 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
 import classnames from "classnames";
+
+const validateRegisterInput = require("../../validation/register");
+const validateLoginInput = require("../../validation/login");
+
+
 class Login extends Component {
   constructor() {
     super();
@@ -13,6 +18,7 @@ class Login extends Component {
       errors: {},
     };
   }
+  
   componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
       this.props.history.push("/dashboard"); // push user to dashboard when they login
@@ -34,6 +40,13 @@ class Login extends Component {
       email: this.state.email,
       password: this.state.password,
     };
+    const { errors, isValid } = validateLoginInput(userData);
+    // Check validation
+    if (!isValid) {
+      console.log(errors);
+      return errors
+    }
+   
     this.props.loginUser(userData);
   };
 

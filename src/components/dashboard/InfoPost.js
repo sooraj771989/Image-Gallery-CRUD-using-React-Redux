@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { getPost, deletePost } from "../../actions/postActions";
+import { getPost } from "../../actions/postActions";
+
+
 class InfoPost extends Component {
   componentDidMount() {
     this.props.getPost(this.props.match.params.id);
@@ -34,13 +36,7 @@ class InfoPost extends Component {
             >
               Edit
             </Link>
-            <button
-              className="btn btn-danger mr-4 "
-              type="button"
-              onClick={() => this.props.deletePost(post.id)}
-            >
-              Delete
-            </button>
+           
             <Link to="/editdashboard" className="btn btn-primary mr-4 ">
               Close
             </Link>
@@ -51,5 +47,5 @@ class InfoPost extends Component {
   }
 }
 const mapStateToProps = (state) => ({ post: state.post });
-const mapDispatchToProps = { getPost, deletePost };
+const mapDispatchToProps = { getPost };
 export default connect(mapStateToProps, mapDispatchToProps)(InfoPost);

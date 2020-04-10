@@ -16,6 +16,7 @@ import AddPost from './components/dashboard/AddPost';
 import InfoPost from './components/dashboard/InfoPost';
 import EditPost from './components/dashboard/EditPost';
 import history from './history';
+ 
 import './assets/css/main.css';
 import './assets/css/app.scss';
 
@@ -42,17 +43,17 @@ class App extends Component {
     return (
       <Provider store={store}>
           <div className="App">
-          <Router history={history}>
+          <Router history={history} >
             <Header />
             <Route exact path="/" component={Dashboard} />
             <Route exact path="/dashboard" component={Dashboard} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
             <Switch>
-              <PrivateRoute exact path="/post/new" component={AddPost} />
-              <PrivateRoute exact path="/post/:id" component={InfoPost} />
-              <PrivateRoute exact path="/post/:id/edit" component={EditPost} />
-              <PrivateRoute exact path="/editdashboard" component={EditDashboard} />
+              <PrivateRoute  exact path="/post/new" history={history} component={AddPost} />
+              <PrivateRoute  exact path="/post/:id" history={history} component={InfoPost} />
+              <PrivateRoute  exact path="/post/:id/edit" history={history}component={EditPost} />
+              <PrivateRoute exact  path="/editdashboard" history={history} component={EditDashboard} />
             </Switch>
             <Footer />
             </Router>

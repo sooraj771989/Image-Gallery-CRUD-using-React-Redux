@@ -41,8 +41,6 @@ class EditDashboard extends Component {
     }
   }
 }
-EditDashboard.propTypes = {
-  getPosts: getPosts.getAllArticles
-};
+ 
 const mapStateToProps = (state) => ({ posts: state.posts });
 export default connect(mapStateToProps,{ getPosts })(EditDashboard);
